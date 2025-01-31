@@ -94,8 +94,13 @@ GEM
     drb (2.2.1)
     error_highlight (0.7.0)
     erubi (1.13.1)
+    fiber-storage (1.0.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    graphql (2.4.9)
+      base64
+      fiber-storage
+      logger
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
     io-console (0.8.0)
@@ -209,6 +214,7 @@ DEPENDENCIES
   bootsnap
   debug
   error_highlight (>= 0.4.0)
+  graphql
   pg (~> 1.1)
   puma (>= 5.0)
   rails (~> 7.1.4, >= 7.1.4.1)
