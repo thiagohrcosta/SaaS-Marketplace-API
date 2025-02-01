@@ -17,6 +17,8 @@ Rails.application.routes.draw do
       post '/login', to: 'sessions#login_with_magic_link'
 
       resources :users, only: [:show, :create] 
+
+      resources :companies, only: [:create]
       post "/graphql", to: "graphql#execute" 
     end
   end
