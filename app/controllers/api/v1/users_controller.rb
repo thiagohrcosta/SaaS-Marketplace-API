@@ -27,7 +27,7 @@ class Api::V1::UsersController < ApplicationController
 
       render json: { message: "Check your email for the magic link!" }, status: :ok
     else
-      render json: { error: user.errors.full_messages }, status: :unprocessable_entity
+      render json: { error: "Error while trying to create user" }, status: :unprocessable_entity
     end
   end
 
@@ -40,7 +40,6 @@ class Api::V1::UsersController < ApplicationController
   def generate_magic_link(user)
     @user = user
     # root_url = "http://localhost:3000/api/v1/"
-    binding.pry
     @magic_link = "http://localhost:3000/api/v1/login?token=#{@user.magic_link_token}&email=#{@user.email}"
     puts @magic_link
     # mail(to: @user.email, subject: 'Your Magic Link for Login')
