@@ -5,15 +5,15 @@ class Api::V1::CompaniesController < ApplicationController
     ActiveRecord::Base.transaction do
       @company = Company.create!(company_params)
 
-      CompanyUsers.create!(
+      CompanyUser.create!(
         company_id: @company.id,
-        user_id: current_user.id
+        user_id: @user.id
       )
 
       render json: { message: "Company created", data: @company }, status: :ok
     end
   rescue ActiveRecord::RecordInvalid => e
-    render json: { error: e.message }, status: :unprocessable_entity
+    render json: { message: "Error while creating a company" }, status: :unprocessable_entity
   end
 
   private

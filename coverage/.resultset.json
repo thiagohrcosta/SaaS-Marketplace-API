@@ -19,7 +19,7 @@
           null,
           null,
           1,
-          10,
+          2,
           null,
           null,
           null
@@ -32,59 +32,57 @@
           null
         ]
       },
-      "/home/thiago/Projetos/saas_marketplace_api/app/controllers/api/v1/users_controller.rb": {
+      "/home/thiago/Projetos/saas_marketplace_api/app/models/company.rb": {
         "lines": [
           1,
-          null,
-          1,
-          2,
-          2,
-          null,
-          2,
-          null,
-          null,
-          2,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          2,
-          null,
-          2,
+          null
+        ]
+      },
+      "/home/thiago/Projetos/saas_marketplace_api/app/controllers/api/v1/companies_controller.rb": {
+        "lines": [
           1,
           1,
           null,
+          1,
+          1,
           1,
           null,
           1,
           null,
           null,
           null,
-          1,
           null,
-          1,
-          2,
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
           1,
           null,
           null,
+          0,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          1,
+          1,
           null,
           null
         ]
       },
       "/home/thiago/Projetos/saas_marketplace_api/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/thiago/Projetos/saas_marketplace_api/app/models/company_user.rb": {
         "lines": [
           1,
           null
@@ -102,46 +100,6 @@
       },
       "/home/thiago/Projetos/saas_marketplace_api/app/channels/application_cable/connection.rb": {
         "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/home/thiago/Projetos/saas_marketplace_api/app/controllers/api/v1/companies_controller.rb": {
-        "lines": [
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
           0,
           0,
           0,
@@ -243,6 +201,60 @@
           0,
           null,
           0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/thiago/Projetos/saas_marketplace_api/app/controllers/api/v1/users_controller.rb": {
+        "lines": [
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
           0
         ],
         "branches": {
@@ -555,24 +567,8 @@
         ],
         "branches": {
         }
-      },
-      "/home/thiago/Projetos/saas_marketplace_api/app/models/company.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/home/thiago/Projetos/saas_marketplace_api/app/models/company_user.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
       }
     },
-    "timestamp": 1738424096
+    "timestamp": 1738807080
   }
 }
