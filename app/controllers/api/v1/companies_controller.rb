@@ -2,18 +2,22 @@ class Api::V1::CompaniesController < ApplicationController
   before_action :authorize_user, only: [:create]
 
   def create
+    return render json: { message: "Company params are required" }, status: :unprocessable_entity if params[:company].blank?
+    return render json: { message: "Company must have a name" }, status: :unprocessable_entity if params[:company][:name].blank?
+    return render json: { message: "Company already exists" }, status: :unprocessable_entity if Company.exists?(name: params[:company][:name])
+    
     ActiveRecord::Base.transaction do
       @company = Company.create!(company_params)
 
-      CompanyUsers.create!(
+      CompanyUser.create!(
         company_id: @company.id,
-        user_id: current_user.id
+        user_id: @user.id
       )
 
       render json: { message: "Company created", data: @company }, status: :ok
     end
-  rescue ActiveRecord::RecordInvalid => e
-    render json: { error: e.message }, status: :unprocessable_entity
+  rescue ActiveRecord::RecordInvalid
+    render json: { message: "Error while creating a company" }, status: :unprocessable_entity
   end
 
   private

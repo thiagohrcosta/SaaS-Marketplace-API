@@ -8,15 +8,10 @@ class Api::V1::SessionsController < ApplicationController
         generate_magic_link(@user)
         return render json: { message: "Check your email for the magic link!" }, status: :ok
       else
-        return render json: { error: user.errors.full_messages }, status: :unprocessable_entity
+        return render json: { error: "Unauthorized" }, status: 401
       end
-    end
-
-    if user
-      # user.update(magic_link_token: user.magic)
-      render json: { message: "Logged in successfully" }, status: :ok
     else
-      render json: { error: "Invalid or expired token" }, status: :unauthorized
+      render json: { message: "Logged in successfully" }, status: :ok
     end
   end
 
