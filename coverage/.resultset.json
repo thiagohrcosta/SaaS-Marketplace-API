@@ -19,7 +19,7 @@
           null,
           null,
           1,
-          34,
+          54,
           null,
           null,
           null
@@ -35,11 +35,23 @@
       "/home/thiago/Projetos/saas_marketplace_api/app/models/company.rb": {
         "lines": [
           1,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/home/thiago/Projetos/saas_marketplace_api/app/models/company_user.rb": {
+        "lines": [
+          1,
+          1,
+          1,
           null
         ]
       },
       "/home/thiago/Projetos/saas_marketplace_api/app/controllers/api/v1/companies_controller.rb": {
         "lines": [
+          1,
           1,
           1,
           null,
@@ -63,30 +75,45 @@
           null,
           null,
           1,
+          4,
+          3,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          4,
+          null,
           null,
           1,
           4,
           4,
-          4,
-          null,
-          4,
-          1,
-          null,
           null,
           null,
           1,
+          9,
+          9,
+          9,
+          null,
+          9,
           2,
+          null,
+          null,
+          null,
+          1,
+          5,
           null,
           null
         ]
       },
       "/home/thiago/Projetos/saas_marketplace_api/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/home/thiago/Projetos/saas_marketplace_api/app/models/company_user.rb": {
         "lines": [
           1,
           null
@@ -190,6 +217,61 @@
       },
       "/home/thiago/Projetos/saas_marketplace_api/app/channels/application_cable/connection.rb": {
         "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/thiago/Projetos/saas_marketplace_api/app/controllers/api/v1/categories_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
           0,
           0,
           0,
@@ -562,8 +644,17 @@
         ],
         "branches": {
         }
+      },
+      "/home/thiago/Projetos/saas_marketplace_api/app/models/category.rb": {
+        "lines": [
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
       }
     },
-    "timestamp": 1738848653
+    "timestamp": 1738879163
   }
 }

@@ -18,8 +18,11 @@ Rails.application.routes.draw do
 
       resources :users, only: [:show, :create] 
 
-      resources :companies, only: [:create]
+      resources :companies, only: [:create, :update]
+
       post "/graphql", to: "graphql#execute" 
+
+      resources :categories
     end
   end
 end
