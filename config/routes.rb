@@ -23,6 +23,7 @@ Rails.application.routes.draw do
       post "/graphql", to: "graphql#execute" 
 
       resources :categories
+      resources :products
     end
   end
 end
