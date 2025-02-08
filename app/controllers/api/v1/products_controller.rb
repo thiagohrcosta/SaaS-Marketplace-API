@@ -2,7 +2,7 @@ class Api::V1::ProductsController < ApplicationController
   before_action :set_product, only: [:show, :update, :destroy]
 
   def index
-    @products = Product.all
+    @products = Product.all.where(is_available: true)
     render json: @products
   end
 
@@ -39,15 +39,18 @@ class Api::V1::ProductsController < ApplicationController
   end
 
   def update
-    return render json: { message: "Unauthorized"}, status: 403 if user_is_authorized? == false
-
+    return render json: { message: "Unauthorized" }, status: 403 unless user_is_authorized?
+  
+    if params[:product].blank?
+      return render json: { message: "Invalid parameters" }, status: 403
+    end
+  
     if @product.update(product_params)
-      return render json: { message: "Product updated", data: @product }, status: :ok
+      render json: { message: "Product updated", data: @product }, status: :ok
     else
-      return render json: { message: "Erro while updating a product"}, status: :unprocessable_entity
+      render json: { message: "Error while updating a product" }, status: :unprocessable_entity
     end
   end
-
   def destroy
     return render json: { message: "Unauthorized"}, status: 403 if user_is_authorized? == false
 
@@ -68,8 +71,10 @@ class Api::V1::ProductsController < ApplicationController
     return false if !@user
 
     @company_user = CompanyUser.find_by(user_id: @user.id)
-    @company = Company.find(@company_user.company_id)
 
+    return false if !@company_user
+
+    @company = Company.find(@company_user.company_id)
     @company_user.company_id == @company.id ? true : false
   end
 
