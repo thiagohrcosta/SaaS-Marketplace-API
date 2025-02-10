@@ -19,6 +19,8 @@ gem "pry"
 
 gem 'faker'
 
+gem 'stripe'
+
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
 
