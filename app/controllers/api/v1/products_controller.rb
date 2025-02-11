@@ -2,7 +2,20 @@ class Api::V1::ProductsController < ApplicationController
   before_action :set_product, only: [:show, :update, :destroy]
 
   def index
-    @products = Product.all.where(is_available: true)
+    @products = Product.all.where(is_available: true).map do |product|
+      {
+        id: product.id,
+        name: product.name,
+        description: product.description,
+        price: product.price,
+        discount_percentage: product.discount_percentage,
+        company_id: product.company_id,
+        category_id: product.company_id,
+        photos: product.photos.map { |photo| photo.url },
+        created_at: product.created_at,
+        updated_at: product.updated_at
+      }
+    end
     render json: @products
   end
 

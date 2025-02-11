@@ -1,7 +1,7 @@
 class Api::V1::SessionsController < ApplicationController
   def login_with_magic_link
     user = User.find_by(magic_link_token: params[:token])
-
+    
     if !user
       @user = User.find_by(email: params[:email])
       if @user
@@ -11,7 +11,12 @@ class Api::V1::SessionsController < ApplicationController
         return render json: { error: "Unauthorized" }, status: 401
       end
     else
-      render json: { message: "Logged in successfully" }, status: :ok
+      render json: { message: "Logged in successfully", data: {
+          user_id: user.id,
+          user_email: user.email,
+          user_role: user.role,
+        }
+      }, status: :ok
     end
   end
 
@@ -23,7 +28,10 @@ class Api::V1::SessionsController < ApplicationController
 
     root_url = "http://localhost:3000/api/v1/"
 
-    @magic_link = "http://localhost:3000/api/v1/login?token=#{@user .magic_link_token}&email=#{@user .email}"
+    @magic_link = "http://localhost:3001/auth?token=#{@user .magic_link_token}&email=#{@user .email}"
+
+
+    # @magic_link = "http://localhost:3000/api/v1/login?token=#{@user .magic_link_token}&email=#{@user .email}"
     puts @magic_link
     # mail(to: @user.email, subject: 'Your Magic Link for Login')
   end
